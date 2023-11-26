@@ -1,5 +1,5 @@
-import Image from "next/image";
+const Home = () => {
+  return <>안녕? </>;
+};
 
-export default function Home() {
-  return <></>;
-}
+export default Home;

@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import "./globals.css";
+import "./Styles/GlobalStyles.css";
 
 export const metadata: Metadata = {
   title: "GoodJam",
@@ -12,8 +12,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html>
-      <body>{children}</body>
-    </html>
+    <>
+      <html>
+        <body>{children}</body>
+      </html>
+    </>
   );
 }
