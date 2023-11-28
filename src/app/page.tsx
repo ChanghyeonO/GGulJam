@@ -6,9 +6,7 @@ const Intro = () => {
       className="
       flex flex-col items-center justify-center text-center 
       bg-container-bg rounded-3xl
-      sm:w-full sm:h-96
-      md:w-3/5 md:h-72
-      lg:w-1/3 lg:h-72"
+      sm:w-full md:w-3/5 lg:w-1/3 py-8"
     >
       <div className="mb-8">
         <h1 className="text-2xl font-bold mb-4">😪꿀잠😪</h1>

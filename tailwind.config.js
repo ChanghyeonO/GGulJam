@@ -11,6 +11,7 @@ module.exports = {
       backgroundColor: {
         "custom-bg": "#394561",
         "container-bg": "#777ca8",
+        "kakao-bg": "#FEE500",
       },
       fontFamily: {
         sans: ["var(--noto_sans_kr)"],

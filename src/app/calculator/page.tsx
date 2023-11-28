@@ -1,10 +1,12 @@
 "use client";
 
 import React, { useState } from "react";
+import KakaoShareButton from "../Components/KakaoShare";
 
 const Calculator = () => {
   const [hour, setHour] = useState("00");
   const [minute, setMinute] = useState("00");
+  const [resultTimes, setResultTimes] = useState<string[]>([]);
 
   const calculateTime = () => {
     let currentHour = Number(hour);
@@ -26,33 +28,34 @@ const Calculator = () => {
         currentHour += 24;
       }
 
-      resultTime.push(
+      resultTime.unshift(
         `${currentHour.toString().padStart(2, "0")}:${currentMinute
           .toString()
           .padStart(2, "0")}`,
       );
     }
-
-    console.log(resultTime);
+    setResultTimes(resultTime);
   };
 
   const renderSelectOptions = (start: number, end: number) => {
     const options = [];
     for (let i = start; i <= end; i++) {
       const value = i < 10 ? `0${i}` : i.toString();
-      options.push(<option>{value}</option>);
+      options.push(<option key={i}>{value}</option>);
     }
     return options;
   };
+
+  const shareDescription = `최적의 수면 시간 계산 결과입니다.\n3번째 이전에 자는것을 걸 권장합니다.\n${resultTimes
+    .map((time, index) => `${index + 1}번째 : ${time}`)
+    .join("\n")}`;
 
   return (
     <div
       className="
       flex flex-col items-center justify-center text-center 
       bg-container-bg rounded-3xl
-      sm:w-full sm:h-96
-      md:w-3/5 md:h-72
-      lg:w-1/3 lg:h-72"
+      sm:w-full md:w-3/5 lg:w-1/3 py-16"
     >
       <div>
         <h1 className="text-2xl font-bold mb-8">
@@ -86,12 +89,38 @@ const Calculator = () => {
           </div>
         </div>
 
-        <button
-          className="bg-black hover:bg-gray-800 text-white font-bold py-2 px-4 rounded-lg"
-          onClick={calculateTime}
-        >
-          계산하기
-        </button>
+        {resultTimes.length === 0 ? (
+          <button
+            className="bg-black hover:bg-gray-800 text-white font-bold py-2 px-4 rounded-lg"
+            onClick={calculateTime}
+          >
+            계산하기
+          </button>
+        ) : (
+          <div>
+            <div className="flex flex-col justify-center mt-8">
+              <div className="text-xl font-bold">잠자기 최적의 시간</div>
+              <div className="font-bold mb-4">{resultTimes[0]}</div>
+            </div>
+            <div>
+              <p>이후 잠자기 최적의 시간</p>
+              {resultTimes.slice(1).map((time, index) => (
+                <div className="mt-4" key={index}>
+                  {index + 2}번째 추천 시간 {time}
+                </div>
+              ))}
+            </div>
+            <div className="flex align-center justify-center gap-4 mt-8 h-10">
+              <button
+                className="bg-black hover:bg-gray-800 text-white font-bold py-2 px-4 rounded-lg"
+                onClick={calculateTime}
+              >
+                다시 계산하기
+              </button>
+              <KakaoShareButton description={shareDescription} />
+            </div>
+          </div>
+        )}
       </div>
     </div>
   );
