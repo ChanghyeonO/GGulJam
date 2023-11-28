@@ -8,7 +8,14 @@ module.exports = {
     "./src/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      backgroundColor: {
+        "custom-bg": "#394561",
+      },
+      fontFamily: {
+        sans: ["var(--noto_sans_kr)"],
+      },
+    },
   },
   plugins: [],
 };

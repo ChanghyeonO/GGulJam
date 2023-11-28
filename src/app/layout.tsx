@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { FontClassNames } from "./Styles/Font";
 import "./Styles/GlobalStyles.css";
 
 export const metadata: Metadata = {
@@ -14,7 +15,7 @@ export default function RootLayout({
   return (
     <>
       <html>
-        <body>{children}</body>
+        <body className={FontClassNames}>{children}</body>
       </html>
     </>
   );

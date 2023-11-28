@@ -1,3 +1,11 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+html {
+  @apply bg-custom-bg;
+}
+
+body {
+  @apply flex flex-col items-center justify-center min-h-screen;
+}
