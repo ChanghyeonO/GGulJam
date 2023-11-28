@@ -7,8 +7,33 @@ const Calculator = () => {
   const [minute, setMinute] = useState("00");
 
   const calculateTime = () => {
-    console.log(`${hour}:${minute}`);
-    console.log(`${Number(hour) - 1}:${Number(minute) - 30}`);
+    let currentHour = Number(hour);
+    let currentMinute = Number(minute);
+
+    let resultTime = [];
+
+    for (let i = 0; i < 6; i++) {
+      currentMinute -= 30;
+
+      if (currentMinute < 0) {
+        currentMinute += 60;
+        currentHour -= 1;
+      }
+
+      currentHour -= 1;
+
+      if (currentHour < 0) {
+        currentHour += 24;
+      }
+
+      resultTime.push(
+        `${currentHour.toString().padStart(2, "0")}:${currentMinute
+          .toString()
+          .padStart(2, "0")}`,
+      );
+    }
+
+    console.log(resultTime);
   };
 
   const renderSelectOptions = (start: number, end: number) => {

@@ -16,7 +16,7 @@ module.exports = {
         sans: ["var(--noto_sans_kr)"],
       },
       screens: {
-        sm: { min: "390px", max: "819px" },
+        sm: { min: "0px", max: "819px" },
         md: { min: "820px", max: "1023px" },
         lg: { min: "1024px" },
       },
