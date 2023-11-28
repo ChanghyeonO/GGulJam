@@ -46,7 +46,7 @@ const Calculator = () => {
     return options;
   };
 
-  const shareDescription = `최적의 수면 시간 계산 결과입니다.\n3번째 이전에 자는것을 걸 권장합니다.\n${resultTimes
+  const shareDescription = `최적의 수면 시간 계산 결과입니다.\n3번째 전에 자는 것을 권장합니다.\n${resultTimes
     .map((time, index) => `${index + 1}번째 : ${time}`)
     .join("\n")}`;
 
