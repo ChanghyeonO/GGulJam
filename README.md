@@ -1,36 +1,35 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+## 꿀잠 자는 시간 측정 웹 앱
 
-## Getting Started
+### 이 프로젝트는 Next.js와 Tailwind를 사용하여 클라이언트를 구현한 예제입니다.
 
-First, run the development server:
+#### 오래 자도 피곤하고 규칙적으로 잠들기 힘든 사람들을 위해 만들었습니다.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+#### 시간을 측정한 뒤 카카오 공유하기를 통해 잠자는 시간을 기록할 수 있도록 했습니다.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 시연영상
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+![시연영상 GIF](/public/GGulJam.gif)
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+## 배포주소
 
-## Learn More
+[🔗배포 주소](https://port-0-gguljam-32updzt2alpiht7oy.sel5.cloudtype.app/)
 
-To learn more about Next.js, take a look at the following resources:
+## 기능
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### 시간 설정
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+#### 다음 날 기상 예정 시간을 설정합니다.
 
-## Deploy on Vercel
+### 결과 확인
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+#### 기상 시간을 확인 할 수 있습니다. 가장 최적의 시간대를 계산해 출력합니다.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+### 결과 공유
+
+#### 확인한 기상시간을 카카오톡 채팅방에 공유할 수 있습니다.
+
+## 설치 방법
+
+#### 프로젝트 클론 후 npm install 로 npm 설치
+
+#### npm run start로 실행
